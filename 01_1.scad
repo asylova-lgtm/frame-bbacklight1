@@ -15,12 +15,23 @@ h_walls = 4;
 //frame1();
 
 //rotate([90, 0, 0])
-translate([0,0,3])
-backlight();
-//bottom();
+//translate([0,0,3])
+//backlight();
 
-cube([w_back+2*thickness_walls, h_back+2*thickness_walls, h_walls], center = true);
+kit_frame();
 
+module kit_frame(){
+    bottom();
+    translate([0,0,h_walls/2+thickness_bottom/2])
+    walls();
+}
+module walls(){
+    difference(){
+        cube([w_back+2*thickness_walls, h_back+2*thickness_walls, h_walls], center = true);
+        color("red")
+        cube([w_back, h_back, h_walls+1], center = true);
+    }
+}
 module backlight(){
     color("lightgreen")
     cube([w_back, h_back, thickness_back], center = true);
