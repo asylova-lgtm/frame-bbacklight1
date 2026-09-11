@@ -1,3 +1,5 @@
+use <akkum_18650.scad>
+
 echo("Работа Асыловой Анастасии!");
 w_frame = 65;
 d_frame = 5;
@@ -19,6 +21,7 @@ h_walls = 4;
 //backlight();
 
 kit_frame();
+akkum18650();
 
 module kit_frame(){
     bottom();
