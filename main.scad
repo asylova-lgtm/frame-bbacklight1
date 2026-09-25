@@ -13,10 +13,10 @@ build_frame();
 
 module build_frame(){
     translate([0, 0, h_back/2+2*gap_backlight])
-    rotate([90,0,0])
+    rotate([90, 0, 0])
     kit_frame();
-    translate([0,0,d_akkum/2])
-    translate([0,d_akkum/2+thickness_bottom,0])
-    rotate([0,90,0])
-    akkum18650();
+    translate([0, d_akkum/2+thickness_bottom+d_akkum/2+3, 0])
+    //rotate([0, 90, 0])
+    //akkum18650();
+    twoAcc();
 }

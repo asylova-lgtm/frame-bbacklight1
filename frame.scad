@@ -15,6 +15,8 @@ h_akkum = 65;
 
 gap_backlight = 1.5;
 
+//kit_frame();
+
 module kit_frame(){
     bottom();
     translate([0,0,h_walls/2+thickness_bottom/2])
