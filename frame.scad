@@ -15,13 +15,27 @@ h_akkum = 65;
 
 gap_backlight = 1.5;
 
-//kit_frame();
+kit_frame();
 
 module kit_frame(){
     bottom();
     translate([0,0,h_walls/2+thickness_bottom/2])
     walls();
+    wires();
 }
+
+module wires() {
+    translate([w_back/2, -h_back/2+6, h_walls/2+0.5])
+    rotate([0, 90, 0])
+    color("red")
+    cylinder(d=d_wires, h=25, center=true, $fn=25);
+    
+    translate([w_back/2, -h_back/2+2, h_walls/2+0.5])
+    rotate([0, 90, 0])
+    color("black")
+    cylinder(d=d_wires, h=25, center=true, $fn=25);
+}
+
 module walls(){
     difference(){
         cube([w_back+2*thickness_walls+gap_backlight, h_back+2*thickness_walls+gap_backlight, h_walls], center = true);
