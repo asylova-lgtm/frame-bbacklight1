@@ -21,7 +21,7 @@ module kit_frame(){
     bottom();
     translate([0,0,h_walls/2+thickness_bottom/2])
     walls();
-    wires();
+    //wires();
 }
 
 module wires() {
