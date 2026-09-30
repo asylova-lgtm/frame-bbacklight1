@@ -9,19 +9,28 @@ w_back = 70;
 h_back = 45;
 thickness_back = 1;
 h_walls = 4;
+d_wires = 1.2;
 
 d_akkum = 18;
 h_akkum = 65;
 
 gap_backlight = 1.5;
 
-kit_frame();
+frame_debug();
+
+module frame_debug(){
+    difference(){
+    kit_frame();
+    translate([w_back/2, 0, h_walls-thickness_bottom])
+    cube([w_back, h_back+2*thickness_walls+2, h_walls*2], center = true);
+    }
+}
 
 module kit_frame(){
     bottom();
     translate([0,0,h_walls/2+thickness_bottom/2])
     walls();
-    //wires();
+    wires();
 }
 
 module wires() {
