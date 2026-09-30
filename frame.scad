@@ -1,6 +1,7 @@
 use <akkum_18650.scad>
 
 echo("Работа Асыловой Анастасии!");
+
 thickness_frame = 4;
 thickness_walls = 2;
 thickness_bottom = 2;
