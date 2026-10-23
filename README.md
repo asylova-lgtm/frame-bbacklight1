@@ -8,6 +8,7 @@ Backlight powered from akkum 18650 LiIon.
 ![commonMD](build_frame.png)
 ![commonMD](build_frame_2akkum_openscad.png)
 ![commonMD](build_frame_2akkum_openscad_wires.png)
+![commonMD](build_frame_controller_openscad.png)
 
 # Hyperlinks
 
