@@ -1,15 +1,26 @@
+echo("Работа Асыловой Анастасии!");
+
 w_back = 70;
 h_back = 45;
 w_controller = 20;
 thickness_bottom = 2;
 thickness_walls = 2;
+thickness_top = 2;
 h_walls = 4;
 gap_backlight = 1.5;
+width_frame_window = 3;
 
 kit_controller();
 //walls();
-
 //debug_controller();
+
+module frame_controller(){
+    difference(){
+        cube([w_controller, h_back, thickness_top], center=true);
+        color("red")
+        cube([w_controller-2*width_frame_window, h_back-2*width_frame_window, thickness_top+1], center=true);
+    }
+}
 
 module debug_controller() {
     difference(){
@@ -25,13 +36,16 @@ module kit_controller(){
     controller();
     translate([0, 0, h_walls/2])
     walls();
+    color("purple")
+    translate([0, 0, thickness_bottom])
+    frame_controller();
 }
 module walls(){
     difference(){
         cube([w_controller+2*thickness_walls+gap_backlight, h_back+2*thickness_walls+gap_backlight, thickness_bottom+h_walls], center=true);
         color("red")
         cube([w_controller+gap_backlight, h_back+gap_backlight, thickness_bottom+h_walls+1], center=true);
-        translate([-w_controller - thickness_walls+gap_backlight/2-0.25, 0, 0])
+        translate([-w_controller - thickness_walls+gap_backlight/2-0.24, 0, 0])
         cube([w_controller+gap_backlight, h_back+gap_backlight+2*thickness_walls+1, thickness_bottom+h_walls+1], center=true);
     }
 }
