@@ -23,23 +23,24 @@ h_akkum = 65;
 
 gap_backlight = 1.5;
 
-kit_frame();
+//kit_frame();
 
-
+frame_controller();
 //translate([1, 0, 0])
 //debug_controller();
 //frame_debug();
-
 //translate([0, 0, thickness_bottom/2+thickness_top/2])
-window_frame();
+//window_frame();
 //walls();
 
-for(i=[1:6]){
-    echo("i = ", i);
-    translate([i*3 , 0, 0])
-    color("red")
-    cylinder(h=30, d=2, center=true, $fn=32);
+module for_wires(){
+    for(i=[1:6]){
+        echo("i = ", i);
+        translate([i*3 , 0, 0])
+        color("red")
+        cylinder(h=30, d=2, center=true, $fn=32);
     }
+}
 
 module window_frame(){
     difference(){

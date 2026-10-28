@@ -10,10 +10,12 @@ h_walls = 4;
 gap_backlight = 1.5;
 width_frame_window = 3;
 
-//kit_controller();
+// kit_controller();
 //walls();
 //debug_controller();
 frame_controller();
+translate([-w_controller-width_frame_window-2, 0, h_walls/2])
+walls();
 
 module frame_controller(){
     difference(){
@@ -46,7 +48,7 @@ module walls(){
         cube([w_controller+2*thickness_walls+gap_backlight, h_back+2*thickness_walls+gap_backlight, thickness_bottom+h_walls], center=true);
         color("red")
         cube([w_controller+gap_backlight, h_back+gap_backlight, thickness_bottom+h_walls+1], center=true);
-        translate([-w_controller - thickness_walls+gap_backlight/2-0.25, 0, 0])
+        translate([-w_controller - thickness_walls+gap_backlight/2-0.24, 0, 0])
         cube([w_controller+gap_backlight, h_back+gap_backlight+2*thickness_walls+1, thickness_bottom+h_walls+1], center=true);
     }
 }
