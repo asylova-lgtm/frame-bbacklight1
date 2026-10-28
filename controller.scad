@@ -10,9 +10,10 @@ h_walls = 4;
 gap_backlight = 1.5;
 width_frame_window = 3;
 
-kit_controller();
+//kit_controller();
 //walls();
 //debug_controller();
+frame_controller();
 
 module frame_controller(){
     difference(){
